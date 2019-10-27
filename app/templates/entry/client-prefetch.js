@@ -13,7 +13,7 @@ import App from 'app/<%= sourceFiles.rootComponent %>'
 const appOptions = App.options /* Vue.extend() */ || App
 
 <% if (__loadingBar) { %>
-import { LoadingBar } from 'quasar'
+import { LoadingBar } from '@horoshop/ui'
 <% } %>
 
 <% if (!ctx.mode.ssr) { %>

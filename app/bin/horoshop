@@ -80,4 +80,4 @@ else {
   cmd = 'help'
 }
 
-require(`./quasar-${cmd}`)
+require(`./horoshop-${cmd}`)

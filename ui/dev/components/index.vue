@@ -5,7 +5,7 @@
         <img src="https://cdn.quasar.dev/img/quasar-logo.png">
       </router-link>
       <div class="text-caption text-center">
-        Quasar v{{ $q.version }}
+        Horoshop-UI v{{ $q.version }}
       </div>
       <q-list
         dense

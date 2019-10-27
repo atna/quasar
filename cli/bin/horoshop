@@ -17,22 +17,22 @@ let cmd = process.argv[2]
 
 if (cmd === 'create') {
   process.argv.splice(2, 1)
-  require(`./quasar-create`)
+  require(`./horoshop-create`)
 }
 else if (cmd === 'serve') {
   process.argv.splice(2, 1)
-  require(`./quasar-serve`)
+  require(`./horoshop-serve`)
 }
 else if (cmd === 'upgrade') {
   process.argv.splice(2, 1)
-  require(`./quasar-upgrade`)
+  require(`./horoshop-upgrade`)
 }
 else {
   const root = require('../lib/get-project-root')()
 
   const localFile = root
     ? (
-      getQuasarAppExecutable('@quasar/app/bin/quasar', root) ||
+      getQuasarAppExecutable('@horoshop/app/bin/horoshop', root) ||
       getQuasarAppExecutable('quasar-cli/bin/quasar', root) // legacy <1.0
     )
     : void 0
@@ -48,7 +48,7 @@ else {
 `
     }
 
-    // deferring to local @quasar/app or pre-v1 quasar-cli
+    // deferring to local @horoshop/app or pre-v1 quasar-cli
     require(localFile)
   }
   else {
@@ -90,6 +90,6 @@ else {
     else {
       cmd = 'help'
     }
-    require(`./quasar-${cmd}`)
+    require(`./horoshop-${cmd}`)
   }
 }

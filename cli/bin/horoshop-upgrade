@@ -104,8 +104,8 @@ function upgradeQuasar () {
 
   for (const type of Object.keys(deps)) {
     for (const packageName of Object.keys(pkg[type] || {})) {
-      // is it a Quasar package?
-      if (packageName !== 'quasar' && !packageName.startsWith('@quasar/')) {
+      // is it a Horoshop package?
+      if (!packageName.startsWith('@horoshop/')) {
         continue
       }
 
@@ -139,7 +139,7 @@ function upgradeQuasar () {
 
   if (!updateAvailable) {
     // The string `Congrats!` in the following log line is parsed by
-    // @quasar/wizard AE. Do not change under any circumstances.
+    // @horoshop/wizard AE. Do not change under any circumstances.
     console.log('  Congrats! All Quasar packages are up to date.\n')
     return
   }

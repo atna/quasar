@@ -18,11 +18,11 @@ import '@quasar/extras/animate/<%= asset %>.css'
 <% }) %>
 
 // We load Quasar stylesheet file
-import 'quasar/dist/quasar.<%= __css.quasarSrcExt %>'
+import '@horoshop/ui/dist/quasar.<%= __css.quasarSrcExt %>'
 
 <% if (framework.cssAddon) { %>
 // We add Quasar addons, if they were requested
-import 'quasar/src/css/flex-addon.<%= __css.quasarSrcExt %>'
+import '@horoshop/ui/src/css/flex-addon.<%= __css.quasarSrcExt %>'
 <% } %>
 
 <% css.length > 0 && css.filter(asset => asset.server !== false).forEach(asset => { %>

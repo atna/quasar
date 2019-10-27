@@ -7,7 +7,7 @@ console.log(
     'utf8'
   )
 )
-console.log('  Running @quasar/cli v' + require('../package.json').version)
+console.log('  Running @horoshop/cli v' + require('../package.json').version)
 
 const chalk = require('chalk')
 

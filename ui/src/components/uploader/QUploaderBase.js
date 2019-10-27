@@ -191,7 +191,7 @@ export default {
 
       this.files = this.files.filter(f => f.name !== file.name)
       this.queuedFiles = this.queuedFiles.filter(f => f.name !== file.name)
-      this.$emit('removed', [ file ])
+      this.$emit('removed', [file])
     },
 
     __getFileInput () {
@@ -387,7 +387,7 @@ export default {
 
         h('div', { staticClass: 'col column justify-center' }, [
           this.label !== void 0
-            ? h('div', { staticClass: 'q-uploader__title' }, [ this.label ])
+            ? h('div', { staticClass: 'q-uploader__title' }, [this.label])
             : null,
 
           h('div', { staticClass: 'q-uploader__subtitle' }, [
@@ -462,6 +462,12 @@ export default {
             })
         ])
       ]))
+    },
+
+    __getFooter () {
+      if (this.$scopedSlots.footer !== void 0) {
+        return this.$scopedSlots.footer(this)
+      }
     }
   },
 
@@ -494,15 +500,21 @@ export default {
         staticClass: 'q-uploader__list scroll'
       }, this.__getList(h)),
 
-      this.dnd === true ? h('div', {
-        staticClass: 'q-uploader__dnd absolute-full',
-        on: {
-          dragenter: stopAndPrevent,
-          dragover: stopAndPrevent,
-          dragleave: this.__onDragLeave,
-          drop: this.__onDrop
-        }
-      }) : null,
+      h('div', {
+        staticClass: 'q-uploader__footer',
+        class: this.colorClass
+      }, [
+        this.__getFooter(h),
+        this.dnd === true ? h('div', {
+          staticClass: 'q-uploader__dnd absolute-full',
+          on: {
+            dragenter: stopAndPrevent,
+            dragover: stopAndPrevent,
+            dragleave: this.__onDragLeave,
+            drop: this.__onDrop
+          }
+        }) : null
+      ]),
 
       this.isBusy === true ? h('div', {
         staticClass: 'q-uploader__overlay absolute-full flex flex-center'

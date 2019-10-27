@@ -27,7 +27,7 @@ import iconSet from 'quasar/icon-set/<%= framework.iconSet %>'
 
 import Vue from 'vue'
 <% if (framework.all === true) { %>
-import Quasar from 'quasar'
+import Quasar from '@horoshop/ui'
 <% } else {
   let importStatement = []
 
@@ -41,7 +41,7 @@ import Quasar from 'quasar'
 
   importStatement = '{Quasar' + (importStatement.length ? ',' + importStatement.join(',') : '') + '}'
 %>
-import <%= importStatement %> from 'quasar'
+import <%= importStatement %> from '@horoshop/ui'
 <% } %>
 
 Vue.use(Quasar, { <%= useStatement.join(',') %> })

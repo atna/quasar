@@ -1,12 +1,6 @@
 .q-uploader
-  box-shadow: $shadow-2
-  border-radius: $generic-border-radius
-  vertical-align: top
-  background: #fff
   position: relative
-
-  width: 320px
-  max-height: 320px
+  width: 100%
 
   &--bordered
     border: 1px solid $separator-color
@@ -21,11 +15,11 @@
     &::-webkit-file-upload-button
       cursor: pointer
 
-  &__header, &__file
+  &__header,
+  &__file
     &:before
       content: ''
-      border-top-left-radius: inherit
-      border-top-right-radius: inherit
+      border-radius: inherit
       position: absolute
       top: 0
       right: 0
@@ -43,6 +37,15 @@
     background-color: var(--q-color-primary)
     color: #fff
     width: 100%
+
+
+  &__footer
+    position: relative
+    border: 1px dashed rgba(0, 0, 0, .24)
+    color: $input-text-color
+    border-radius: $generic-border-radius
+    height: 32px
+    margin-top: 8px
 
   &__spinner
     font-size: 24px
@@ -63,16 +66,11 @@
 
   &__list
     position: relative
-    border-bottom-left-radius: inherit
-    border-bottom-right-radius: inherit
-    padding: 8px
-    min-height: 60px
     flex: 1 1 auto
     background: #fff
 
   &__file
-    border-radius: $generic-border-radius $generic-border-radius 0 0
-    border: 1px solid $separator-color
+    border-radius: $generic-border-radius
 
     .q-circular-progress
       color: #000
