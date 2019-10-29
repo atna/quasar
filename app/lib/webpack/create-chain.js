@@ -131,7 +131,7 @@ module.exports = function (cfg, configName) {
             [
               'transform-imports', {
                 quasar: {
-                  transform: `quasar/dist/babel-transforms/imports.js`,
+                  transform: `@horoshop/ui/dist/babel-transforms/imports.js`,
                   preventFullImport: true
                 }
               }

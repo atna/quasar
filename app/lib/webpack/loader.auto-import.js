@@ -1,6 +1,6 @@
 const getDevlandFile = require('../helpers/get-devland-file')
 
-const data = getDevlandFile('quasar/dist/babel-transforms/auto-import.json')
+const data = getDevlandFile('@horoshop/ui/dist/babel-transforms/auto-import.json')
 
 const compRegex = {
   '?kebab': new RegExp(data.regex.kebabComponents || data.regex.components, 'g'),
@@ -59,7 +59,7 @@ module.exports = function (content) {
         ? content.indexOf('/* hot reload */')
         : -1
 
-      const code = `\nimport {${comp}${hasComp === true && hasDir === true ? ',' : ''}${dir}} from 'quasar'\n` +
+      const code = `\nimport {${comp}${hasComp === true && hasDir === true ? ',' : ''}${dir}} from '@horoshop/ui'\n` +
         (hasComp === true
           ? `component.options.components = Object.assign({${comp}}, component.options.components || {})\n`
           : '') +

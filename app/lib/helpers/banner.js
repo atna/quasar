@@ -1,8 +1,8 @@
 const { green, grey, underline } = require('chalk')
 const
   getPackageJson = require('./get-package-json'),
-  quasarVersion = getPackageJson('quasar').version,
-  cliAppVersion = getPackageJson('@quasar/app').version
+  quasarVersion = getPackageJson('@horoshop/ui').version,
+  cliAppVersion = getPackageJson('@horoshop/app').version
 
 module.exports = function (argv, cmd, details) {
   let banner = ''
@@ -15,8 +15,8 @@ module.exports = function (argv, cmd, details) {
 
   banner += `
  ${cmd === 'dev' ? 'Dev mode..........' : 'Build mode........'} ${green(argv.mode)}
- Pkg quasar........ ${green('v' + quasarVersion)}
- Pkg @quasar/app... ${green('v' + cliAppVersion)}
+ Pkg @horoshop/ui.... ${green('v' + quasarVersion)}
+ Pkg @horoshop/app... ${green('v' + cliAppVersion)}
  Debugging......... ${cmd === 'dev' || argv.debug ? green('enabled') : grey('no')}`
 
   if (cmd === 'build') {
@@ -73,7 +73,7 @@ module.exports.devCompilationSuccess = function (ctx, url, appDir) {
   return `App dir........... ${green(appDir)}
     App URL........... ${green(url)}
     Dev mode.......... ${green(ctx.modeName + (ctx.mode.ssr && ctx.mode.pwa ? ' + pwa' : ''))}
-    Pkg quasar........ ${green('v' + quasarVersion)}
-    Pkg @quasar/app... ${green('v' + cliAppVersion)}
+    Pkg @horoshop/ui.. ${green('v' + quasarVersion)}
+    Pkg @horoshop/app. ${green('v' + cliAppVersion)}
   `
 }

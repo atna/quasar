@@ -5,8 +5,8 @@ const ext = cssVariables.appFile.scss
   : (cssVariables.appFile.sass ? 'sass' : false)
 
 const prefix = ext !== false
-  ? `@import '~src/css/quasar.variables.${ext}', 'quasar/src/css/variables.sass';\n`
-  : `@import 'quasar/src/css/variables.sass';\n`
+  ? `@import '~src/css/quasar.variables.${ext}', '@horoshop/ui/src/css/variables.sass';\n`
+  : `@import '@horoshop/ui/src/css/variables.sass';\n`
 
 module.exports = function (content) {
   return content.indexOf('$') !== -1

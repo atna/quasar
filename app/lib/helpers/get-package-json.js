@@ -2,7 +2,7 @@ const
   appPaths = require('../app-paths')
 
 module.exports = function (pkgName) {
-  if (pkgName === '@quasar/app') {
+  if (pkgName === '@horoshop/app') {
     return require('../../package.json')
   }
 
